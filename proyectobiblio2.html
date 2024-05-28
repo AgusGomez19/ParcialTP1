@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioMovies | Biblio P.</title>
+    <link rel="icon" href="carrete-de-pelicula.png">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-color: #FF0000;
+    --background-color: rgb(20,20,20);
+    --dark-color: #151515;
+}
+
+html{
+    font-size: 65.5%;
+    font-family: "Poppins";
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+/*Utilidades >:D*/
+
+.conteiner{
+    max-width: 120rem;
+    margin: 0 auto;
+}    
+/*header>:D*/
+.contenedor-main{
+    background-color: #292929;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.soporte{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--primary-color);
+
+}
+.soporte i{
+    font-size: 3.3rem;
+
+}
+.contenedor-soporte{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-logo{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.contenedor-logo i{
+    font-size: 3rem;
+    color: #FF0000;
+}    
+.contenedor-logo h1 a{
+    text-decoration: none;
+    color: transparent;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px red;
+    animation: move 30s linear infinite;
+    background-image: linear-gradient(to left,red,rgb(226,33,33),black,rgb(35,31,31));
+    background-size: 200%;
+}
+@keyframes move{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+
+.contenedor-usuario{
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+
+.contenedor-usuario .fa-user{
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
+}
+
+.contenedor-usuario .fa-dollar-sign{
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+
+}
+.premium{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+/*nav*/
+
+.conteiner-navbar{
+    background-color: var(--primary-color);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;   
+}
+.navbar .fa-bars{
+    display: none;
+}
+.menu{
+    display: flex;
+    gap: 2rem;
+}
+.menu li{
+    list-style: none;
+}
+.menu a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase !important;
+    position: relative;
+    
+}
+.menu a::after{
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background-color: #Fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%,50%);
+    transition: all .3s ease;
+    opacity: 0;
+}
+
+.menu a:hover::after{
+    opacity: 1;
+}
+.menu a:hover{
+    color: #Fff;
+}
+.buscador{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    overflow: hidden;
+}
+.buscador input{
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    color: #777;
+    cursor: pointer;
+    
+}
+.buscador input::-webkit-search-cancel-button{
+    appearance: none;
+}
+.buscador .btn-search{
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+
+}
+.btn-search{
+    font-size: 2rem;
+    color: #fff;
+}
+.imagenes-card{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+
+}
+.conteiner-imagenes{
+    display: flex;
+    width: 100%;
+    border-radius: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background: whitesmoke;
+    align-items: center;
+}
+.card-img{
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    margin: 10px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    position: relative;
+}
+.intro{
+    height: 70px;
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    background: rgb(27, 27, 27, .5);
+    color: white;
+    bottom: 0px;
+    transition: .5s;
+}
+.card-img img {
+    width: 100%; 
+    height: auto;
+}
+.TituloPeli{
+    margin: 10px;
+    font-size: 40px;
+}
+.Descpeli{
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+.Spanpeli{
+    font-weight: bold;
+
+}
+.card-img:hover{
+    cursor: pointer;
+}
+.card-img:hover .intro{
+    height: 220px;
+    bottom: 0%;
+    background: black;
+}
+.card-img:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+.card-img:hover img{
+    transform: scale(1.1) rotate(-3deg);
+}
+.Inicio-Texto1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.texto2{
+    text-decoration: underline;
+}
+</style>
+<body>
+    <header>
+        <div class="contenedor-main">
+            <div class="conteiner hero">
+                <div class="soporte">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="contenedor-soporte">
+                        <span class="texto">Soporte</span>
+                        <span class="numero">142-534-234</span>
+                    </div>
+                </div>
+
+                <div class="contenedor-logo">
+                    <i class="fa-solid fa-film"></i>
+                    <h1 class="logo"><a href="/">BiblioMovies</a></h1>
+                </div>
+
+                <div class="contenedor-usuario">
+                    <a href="registro.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <div class="premium">
+                        <span class="text">Premium</span>
+                        <span class="number">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conteiner-navbar">
+            <nav class="navbar conteiner">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="proyectobiblo1.html">Inicio</a></li>
+                    <li><a href="proyectobiblio2.html">Bibloteca Principal</a></li>
+                    <li><a href="proyectobiblio3.html">Contactos</a></li>
+                    
+                </ul>
+
+                <form class="buscador">
+                    <input type="search" placeholder="Buscar...">
+                    <buttom class="btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </buttom>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <br><br>
+    <div class="Inicio-Texto1">
+        <h1 class="texto2">
+        Peliculas recientemente agregadas
+        </h1>
+    </div><br><br>
+    <div class="conteiner-imagenes">
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2024/05/Drive_WEB.jpg" alt="Drive-RG">
+            <div class="intro">
+                <h1 class="TituloPeli">Drive</h1>
+                <p class="Descpeli"><span class="Spanpeli">Ryan Gosling</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2023/05/The-Batman-2.jpg" alt="Inception">
+            <div class="intro">
+                <h1 class="TituloPeli">The Batman</h1>
+                <p class="Descpeli"><span class="Spanpeli">Robert Pattinson</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2024/03/dd.jpg" alt="Duna">
+            <div class="intro">
+                <h1 class="TituloPeli">Duna 2</h1>
+                <p class="Descpeli"><span class="Spanpeli">Timothee Chalamet & Austin Butler</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2024/01/AlanDavid-Interstellar.jpg" alt="Drive-RG">
+            <div class="intro">
+                <h1 class="TituloPeli">Interstellar</h1>
+                <p class="Descpeli"><span class="Spanpeli">Matthew McConaughey</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2024/05/GUARDIANS.jpg" alt="Inception">
+            <div class="intro">
+                <h1 class="TituloPeli">Guardianes de la Galaxia</h1>
+                <p class="Descpeli"><span class="Spanpeli">Chris Pratt</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2023/03/dfrlhwn-6c4fec1e-0178-4463-b0f3-c00acc5741cc.jpg" alt="Duna">
+            <div class="intro">
+                <h1 class="TituloPeli">Elvis (2022)</h1>
+                <p class="Descpeli"><span class="Spanpeli">Austin Butler & Tom Hanks</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2021/01/Logan_Poster-1200x1778.jpg" alt="Drive-RG">
+            <div class="intro">
+                <h1 class="TituloPeli">Logan</h1>
+                <p class="Descpeli"><span class="Spanpeli">Hugh Jackman</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2021/01/SCARFACE_low.jpg" alt="Inception">
+            <div class="intro">
+                <h1 class="TituloPeli">Cara cortada</h1>
+                <p class="Descpeli"><span class="Spanpeli">Al pacino</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2021/01/TENET.jpg" alt="Duna">
+            <div class="intro">
+                <h1 class="TituloPeli">TENET</h1>
+                <p class="Descpeli"><span class="Spanpeli">John D Washington</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2024/05/Joker-2-poster-33-render.jpg" alt="Drive-RG">
+            <div class="intro">
+                <h1 class="TituloPeli">Joker 2</h1>
+                <p class="Descpeli"><span class="Spanpeli">Joaquin Phoenix</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2024/02/oppenhemier.jpg" alt="Inception">
+            <div class="intro">
+                <h1 class="TituloPeli">Oppenhemier</h1>
+                <p class="Descpeli"><span class="Spanpeli">Cilian Murphy</span></p>
+            </div>
+        </div>
+        <div class="card-img">
+            <img class="imagenes-card" src="https://posterspy.com/wp-content/uploads/2023/11/NAPOLEON3.jpg" alt="Duna">
+            <div class="intro">
+                <h1 class="TituloPeli">Napoleon</h1>
+                <p class="Descpeli"><span class="Spanpeli">Joaquin Phoenix</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/4875ad8e80.js" crossorigin="anonymous"></script>
+</body>
+</html>
+

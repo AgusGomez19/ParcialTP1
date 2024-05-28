@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-color: #FF0000;
+    --background-color: rgb(20,20,20);
+    --dark-color: #151515;
+}
+
+html{
+    font-size: 65.5%;
+    font-family: "Poppins";
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+/*Utilidades >:D*/
+
+.conteiner{
+    max-width: 120rem;
+    margin: 0 auto;
+}    
+/*header>:D*/
+.contenedor-main{
+    background-color: #292929;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.soporte{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--primary-color);
+
+}
+.soporte i{
+    font-size: 3.3rem;
+
+}
+.contenedor-soporte{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-logo{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.contenedor-logo i{
+    font-size: 3rem;
+    color: #FF0000;
+}    
+.contenedor-logo h1 a{
+    text-decoration: none;
+    color: transparent;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px red;
+    animation: move 30s linear infinite;
+    background-image: linear-gradient(to left,red,rgb(226,33,33),black,rgb(35,31,31));
+    background-size: 200%;
+}
+@keyframes move{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+
+.contenedor-usuario{
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+
+.contenedor-usuario .fa-user{
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
+}
+
+.contenedor-usuario .fa-dollar-sign{
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+
+}
+.premium{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+/*nav*/
+
+.conteiner-navbar{
+    background-color: var(--primary-color);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;   
+}
+.navbar .fa-bars{
+    display: none;
+}
+.menu{
+    display: flex;
+    gap: 2rem;
+}
+.menu li{
+    list-style: none;
+}
+.menu a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase !important;
+    position: relative;
+    
+}
+.menu a::after{
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background-color: #Fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%,50%);
+    transition: all .3s ease;
+    opacity: 0;
+}
+
+.menu a:hover::after{
+    opacity: 1;
+}
+.menu a:hover{
+    color: #Fff;
+}
+.buscador{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    overflow: hidden;
+}
+.buscador input{
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    color: #777;
+    cursor: pointer;
+    
+}
+.buscador input::-webkit-search-cancel-button{
+    appearance: none;
+}
+.buscador .btn-search{
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+
+}
+.btn-search{
+    font-size: 2rem;
+    color: #fff;
+}
+.form-register {
+    width: 400px;
+    background: black;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controls {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid red;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.form-register a {
+    color: white;
+    text-decoration: none;
+}
+
+.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-register .botons {
+    width: 100%;
+    background: red;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+</style>
+<body>
+    <header>
+        <div class="contenedor-main">
+            <div class="conteiner hero">
+                <div class="soporte">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="contenedor-soporte">
+                        <span class="texto">Soporte</span>
+                        <span class="numero">142-534-234</span>
+                    </div>
+                </div>
+
+                <div class="contenedor-logo">
+                    <i class="fa-solid fa-film"></i>
+                    <h1 class="logo"><a href="/">BiblioMovies</a></h1>
+                </div>
+
+                <div class="contenedor-usuario">
+                    <i class="fa-solid fa-user"><a href="login.html"></a></i>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <div class="premium">
+                        <span class="text">Premium</span>
+                        <span class="number">(0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conteiner-navbar">
+            <nav class="navbar conteiner">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="proyectobiblo1.html">Inicio</a></li>
+                    <li><a href="proyectobiblio2.html">Bibloteca Principal</a></li>
+                    <li><a href="proyectobiblio3.html">Contactos    </a></li>
+            
+                </ul>
+
+                <form class="buscador">
+                    <input type="search" placeholder="Buscar...">
+                    <buttom class="btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </buttom>
+                </form>
+            </nav>
+        </div>
+    </header>
+    <section class="form-register">
+        <h4>Inicio Sesion</h4>
+        <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" required>
+        <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña" required>
+        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+        <input class="botons" type="submit" value="Registrar">
+        
+    </section>
+
+    <script src="https://kit.fontawesome.com/4875ad8e80.js" crossorigin="anonymous"></script>
+</body>
+</html>
